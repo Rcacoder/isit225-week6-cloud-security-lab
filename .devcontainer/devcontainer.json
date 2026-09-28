@@ -1,0 +1,11 @@
+{
+  "name": "ISIT225 Cloud Security Lab",
+  "image": "mcr.microsoft.com/devcontainers/python:3.12-bookworm",
+  "postCreateCommand": "python3 scanner.py || true",
+  "customizations": {
+    "vscode": {
+      "extensions": ["hashicorp.terraform", "ms-python.python"]
+    }
+  },
+  "waitFor": "postCreateCommand"
+}

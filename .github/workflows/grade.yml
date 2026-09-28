@@ -1,0 +1,33 @@
+name: Grade Cloud Security Lab
+
+on:
+  push:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  grade:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run the grader
+        run: python3 scanner.py --ci
+
+      - name: Commit-history check (informational only — does not affect your grade)
+        if: always()
+        run: |
+          echo "## Commit history (informational)" >> "$GITHUB_STEP_SUMMARY"
+          COUNT=$(git log --oneline | wc -l | tr -d ' ')
+          echo "- Commits on this branch: $COUNT" >> "$GITHUB_STEP_SUMMARY"
+          if [ "$COUNT" -lt 3 ]; then
+            echo "- Note: most students fix these six issues in several small commits. One giant commit at the end is a flag for your instructor to ask you to walk through your fixes." >> "$GITHUB_STEP_SUMMARY"
+          fi
