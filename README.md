@@ -1,7 +1,13 @@
-# ISIT225 — Week 6 Cloud Security Fix-It Lab
+# ISIT225 — Week 6 Cloud Security Fix-It Lab (git version)
+
+**This is the optional git/GitHub version of the exercise.** Most students
+should use the in-browser version linked from the course site instead — it
+needs no GitHub account and tracks your progress automatically. Use this
+version only if you already know git and want the practice.
 
 **Topic:** Cloud Security and Privacy · **Time budget:** 30–40 minutes ·
-**Auto-graded:** yes, by GitHub Actions on every push.
+**Auto-graded:** yes, by GitHub Actions on every push · **Cost:** none — no
+payment method, no billing, no sign-up beyond a free GitHub account.
 
 ## Scenario
 
@@ -24,16 +30,15 @@ If Actions don't run automatically on your first push, open the **Actions**
 tab in your new repo and click **"I understand my workflows, go ahead and
 enable them."**
 
-## 2. Open an environment — pick whichever is fastest for you
+## 2. Edit it — free, in your browser, no container
 
-- **Easiest, works anywhere (recommended if Codespaces is slow or blocked):**
-  Press **`.`** on your repo's GitHub page (or change `github.com` to
-  `github.dev` in the URL). This opens a full VS Code editor in your browser
-  — no container to start. Edit the two files, commit with the Source
-  Control panel on the left, and push.
-- **GitHub Codespaces** (if you want to run the checker yourself before
-  pushing): click **Code → Codespaces → Create codespace on main**. Give it
-  20–30 seconds to start, then use the built-in terminal.
+Press **`.`** on your repo's GitHub page (or change `github.com` to
+`github.dev` in the URL). This opens a full VS Code editor in your browser —
+nothing to install, nothing to start, no payment method ever asked for. Edit
+the two files, commit with the Source Control panel on the left, and push.
+
+If you have Python installed locally and would rather work that way, that
+works too — clone the repo and run `python3 scanner.py` from a terminal.
 
 ## 3. Fix the six issues
 
@@ -41,8 +46,7 @@ Open `cloud_config.tf`. Each vulnerable line has a `# FIX N:` comment telling
 you what's wrong. Fix them **one at a time and commit after each fix** —
 your instructor looks at the commit history, not just the final state.
 
-If you're in a Codespace or have Python locally, check your progress any
-time with:
+If you have Python locally, check your progress any time with:
 
 ```bash
 python3 scanner.py
@@ -71,21 +75,19 @@ git push
 
 Open the **Actions** tab in your repo (or look for the ✅ / ❌ next to your
 latest commit) — the workflow runs `scanner.py` and posts a pass/fail report
-for all 8 checks as a job summary.
+for all 8 checks as a job summary. GitHub Actions is free on a public repo
+like this one, no matter how many times you push.
 
 ## 7. Submit
 
-Paste the link to **your own repo** (with the green ✅) into this week's
-DevSecOps assignment box on the course platform, along with a one-sentence
-summary of your fixes.
+This repo does **not** mark anything done automatically on the course site —
+that only happens through the in-browser version. Paste the link to **your
+own repo** (with the green ✅) into this week's DevSecOps evidence box on the
+course platform, along with a one-sentence summary of your fixes.
 
-## If GitHub Codespaces is blocked on your network
-
-Use `github.dev` from step 2 — it's just the browser talking to git, not a
-running container, so it works almost everywhere a container-based service
-would be blocked. A Kubernetes/Linux-flavored backup scenario for Killercoda
-is also included in [`killercoda/`](killercoda/) for your instructor to
-import if needed.
+A Kubernetes/Linux-flavored backup scenario for Killercoda is also included
+in [`killercoda/`](killercoda/), for your instructor to import if this
+version is ever needed as a fallback.
 
 ## Spot check (for your instructor)
 

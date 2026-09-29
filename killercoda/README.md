@@ -1,7 +1,7 @@
 # Killercoda backup scenario (not published — import manually)
 
 This folder is a ready-to-import Killercoda scenario, kept as a **backup**
-for if GitHub Codespaces / `github.dev` is blocked on campus. I don't have a
+for if `github.dev` (the git version's editor) is blocked on campus. I don't have a
 Killercoda account, and Killercoda has no API for publishing a scenario, so
 this could not be published automatically — someone with a Killercoda
 account needs to import it by hand (takes about 5 minutes):
@@ -22,7 +22,7 @@ account needs to import it by hand (takes about 5 minutes):
 
 ## What it covers
 
-A different but topically matched exercise to the GitHub Codespaces version:
+A different but topically matched exercise to the git version:
 hardening a Docker container instead of a Terraform-style config file —
 closer to what Killercoda's Linux/container backend is good at. Students fix
 a Dockerfile that runs as root with a hardcoded secret and no resource
